@@ -13,8 +13,12 @@ services:
     #  - ./scripts/:/mnt/scripts/
     # Our packages
       - ../../code/is-packages/MyNewsService/:${GUEST_IS_HOME}/packages/MyNewsService/
-      - ../../code/is-packages/MyNewsService/:${GUEST_IS_HOME}/packages/MyMailService/
+      - ../../code/is-packages/MyMailService/:${GUEST_IS_HOME}/packages/MyMailService/
     environment:
       - SAG_IS_LICENSE_FILE=/tmp/license.xml
       - SAG_IS_CONFIG_PROPERTIES=/tmp/application.properties
+      - SMTP_HOST_NAME
+      - SMTP_HOST_PORT
+      - SMTP_USER_EMAIL
+      - SMTP_USER_PASS
     #entrypoint: /mnt/scripts/entrypoint.sh
